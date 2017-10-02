@@ -16,7 +16,14 @@ export class CarOwnerListComponent implements OnInit {
   constructor(private carOwnerDataService: CarOwnerDataService) { }
 
   ngOnInit() {
-    this.carOwners = this.carOwnerDataService.getAllCarOwners();
+    this.carOwnerDataService
+    .getAllCarOwners()
+    .subscribe(
+      (carOwners) => {
+        this.carOwners = carOwners;
+      }
+    )
   }
+
 
 }
