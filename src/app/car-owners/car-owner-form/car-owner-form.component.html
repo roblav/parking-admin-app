@@ -2,19 +2,23 @@
   <h1>Car Owners Form</h1>
     <form>
       <div class="form-group">
-        <label for="title">Name</label>
+        <label for="id">ID</label>
+        <input type="text" class="form-control" id="id" required [(ngModel)]="model.id" name="id">
+      </div>
+      <div class="form-group">
+        <label for="name">Name</label>
         <input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name">
       </div>
       <div class="form-group">
-        <label for="author">Car Registration</label>
+        <label for="carReg">Car Registration</label>
         <input type="text" class="form-control" id="carReg" required [(ngModel)]="model.carReg" name="carReg">
       </div>
       <div class="form-group">
-        <label for="url">Email</label>
+        <label for="email">Email</label>
         <input type="text" class="form-control" id="email" [(ngModel)]="model.email" name="email">
       </div>
       <div class="form-group">
-        <label for="url">Skype ID</label>
+        <label for="skypeId">Skype ID</label>
         <input type="text" class="form-control" id="skypeId" [(ngModel)]="model.skypeId" name="skypeId">
       </div>
       <button type="submit" class="btn btn-default" (click)="addCarOwner()">Submit</button>

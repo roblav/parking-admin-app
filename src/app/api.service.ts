@@ -29,8 +29,15 @@ export class ApiService {
   }
 
   // API: POST /car-owners
-  public createCarOwner(carOwner: CarOwner) {
+  public createCarOwner(carOwner: CarOwner): Observable<CarOwner> {
     //this.http.post()
+    return this.http
+      .post(API_URL + '/car-owners', carOwner)
+      .map(response => {
+        console.log(response.json());
+        return new CarOwner(response.json())
+      })
+      .catch(this.handleError);
   }
 
   // API: GET /car-owners/:id

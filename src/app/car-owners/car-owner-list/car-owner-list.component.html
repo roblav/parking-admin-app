@@ -2,6 +2,7 @@
   Car Owners:</h2>
 <table class="table">
   <tr>
+    <th>ID</th>
     <th>Name</th>
     <th>Car Reg</th>
     <th>Email</th>
@@ -10,6 +11,7 @@
     <th>Delete</th>
   </tr>
   <tr *ngFor="let carOwner of carOwners">
+    <td>{{carOwner.id}}</td>
     <td>{{carOwner.name}}</td>
     <td>{{carOwner.carReg}}</td>
     <td>{{carOwner.email}}</td>

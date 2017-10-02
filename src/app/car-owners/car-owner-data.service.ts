@@ -17,10 +17,8 @@ export class CarOwnerDataService {
   }
 
   // Simulate POST /carowners
-  addCarOwner(carOwner: CarOwner): CarOwnerDataService {
-    console.log(carOwner);
-    this.carOwners.push(carOwner);
-    return this;
+  addCarOwner(carOwner: CarOwner): Observable<CarOwner> {
+    return this.api.createCarOwner(carOwner);
   }
 
   // Simulate GET /carowners/:email

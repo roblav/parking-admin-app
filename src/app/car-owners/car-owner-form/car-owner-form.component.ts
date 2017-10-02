@@ -21,7 +21,9 @@ export class CarOwnerFormComponent implements OnInit {
   get currentCarOwner() { return JSON.stringify(this.model)}
 
   addCarOwner(){
-    this.carOwnerDataService.addCarOwner(this.model);
+    this.carOwnerDataService
+      .addCarOwner(this.model)
+      .subscribe()
     this.model = new CarOwner();
   }
 
