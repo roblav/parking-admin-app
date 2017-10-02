@@ -1,0 +1,45 @@
+<div class="container">
+  <h1>Car Owners Form</h1>
+    <form>
+      <div class="form-group">
+        <label for="title">Name</label>
+        <input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name">
+      </div>
+      <div class="form-group">
+        <label for="author">Car Registration</label>
+        <input type="text" class="form-control" id="carReg" required [(ngModel)]="model.carReg" name="carReg">
+      </div>
+      <div class="form-group">
+        <label for="url">Email</label>
+        <input type="text" class="form-control" id="email" [(ngModel)]="model.email" name="email">
+      </div>
+      <div class="form-group">
+        <label for="url">Skype ID</label>
+        <input type="text" class="form-control" id="skypeId" [(ngModel)]="model.skypeId" name="skypeId">
+      </div>
+      <button type="submit" class="btn btn-default" (click)="addCarOwner()">Submit</button>
+    </form>
+</div>
+
+<div>
+  <h2>Model:</h2>
+  {{ currentCarOwner }}
+</div>
+
+<div>
+  <h2>Car Owners:</h2>
+  <table class="table">
+    <tr>
+      <th>Name</th>
+      <th>Car Reg</th>
+      <th>Email</th>
+      <th>Skype ID</th>
+    </tr>
+    <tr *ngFor="let carOwner of carOwners">
+      <td>{{carOwner.name}}</td>
+      <td>{{carOwner.carReg}}</td>
+      <td>{{carOwner.email}}</td>
+      <td>{{carOwner.skypeId}}</td>
+    </tr>
+  </table>
+</div>
