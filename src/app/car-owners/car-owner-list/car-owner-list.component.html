@@ -1,0 +1,20 @@
+<h2>
+  Car Owners:</h2>
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th>Car Reg</th>
+    <th>Email</th>
+    <th>Skype ID</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  <tr *ngFor="let carOwner of carOwners">
+    <td>{{carOwner.name}}</td>
+    <td>{{carOwner.carReg}}</td>
+    <td>{{carOwner.email}}</td>
+    <td>{{carOwner.skypeId}}</td>
+    <td><button>Edit</button></td>
+    <td><button>Delete</button></td>
+  </tr>
+</table>

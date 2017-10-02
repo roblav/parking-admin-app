@@ -4,17 +4,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { CarOwnerFormComponent } from './car-owner-form/car-owner-form.component';
+
+import { CarOwnersModule } from './car-owners/car-owners.module'
 
 @NgModule({
   declarations: [
-    AppComponent,
-    CarOwnerFormComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CarOwnersModule
   ],
   providers: [],
   bootstrap: [AppComponent]

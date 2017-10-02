@@ -4,14 +4,12 @@ import { CarOwnerDataService } from '../car-owner-data.service';
 import { CarOwner } from '../car-owner';
 
 @Component({
-  selector: 'car-owner-form',
-  templateUrl: './car-owner-form.component.html',
-  styleUrls: ['./car-owner-form.component.css'],
+  selector: 'car-owner-list',
+  templateUrl: './car-owner-list.component.html',
+  styleUrls: ['./car-owner-list.component.css'],
   providers: [CarOwnerDataService]
 })
-export class CarOwnerFormComponent implements OnInit {
-
-  model = new CarOwner();
+export class CarOwnerListComponent implements OnInit {
 
   carOwners: CarOwner[] = []
 
@@ -19,13 +17,6 @@ export class CarOwnerFormComponent implements OnInit {
 
   ngOnInit() {
     this.carOwners = this.carOwnerDataService.getAllCarOwners();
-  }
-
-  get currentCarOwner() { return JSON.stringify(this.model)}
-
-  addCarOwner(){
-    this.carOwnerDataService.addCarOwner(this.model);
-    this.model = new CarOwner();
   }
 
 }

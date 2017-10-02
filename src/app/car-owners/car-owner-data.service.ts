@@ -50,6 +50,7 @@ export class CarOwnerDataService {
 
   // Simulate POST /carowners
   addCarOwner(carOwner: CarOwner): CarOwnerDataService {
+    console.log(carOwner);
     this.carOwners.push(carOwner);
     return this;
   }
