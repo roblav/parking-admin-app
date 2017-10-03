@@ -22,10 +22,12 @@ export class CarOwnerDataService {
   }
 
   // Simulate GET /carowners/:email
-  getCarOwnerByEmail(email: string): CarOwner {
-    return this.carOwners
-      .filter(carOwner => carOwner.email === email)
-      .pop();
+  getCarOwnerById(id: number): Observable<CarOwner> {
+    return this.api.getCarOwnerById(id);
+  }
+
+  deleteCarOwnerById(id: number): Observable<null> {
+    return this.api.deleteCarOwnerById(id);
   }
 
 }

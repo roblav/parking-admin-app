@@ -16,7 +16,7 @@
     <td>{{carOwner.carReg}}</td>
     <td>{{carOwner.email}}</td>
     <td>{{carOwner.skypeId}}</td>
-    <td><button>Edit</button></td>
-    <td><button>Delete</button></td>
+    <td><button (click)="editCarOwner(carOwner.id)">Edit</button></td>
+    <td><button (click)="deleteCarOwner(carOwner.id)">Delete</button></td>
   </tr>
 </table>

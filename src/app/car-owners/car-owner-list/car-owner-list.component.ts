@@ -25,5 +25,19 @@ export class CarOwnerListComponent implements OnInit {
     )
   }
 
+  editCarOwner(id){
+    console.log('EDIT: ' + id)
+  }
+
+  deleteCarOwner(id){
+    console.log('DELETE: ' + id)
+    this.carOwnerDataService
+    .deleteCarOwnerById(id)
+    .subscribe(
+      (_) => {
+        this.carOwners = this.carOwners.filter((co) => co.id !== id)
+      }
+    )
+  }
 
 }

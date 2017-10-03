@@ -34,15 +34,21 @@ export class ApiService {
     return this.http
       .post(API_URL + '/car-owners', carOwner)
       .map(response => {
-        console.log(response.json());
+        //console.log(response.json());
         return new CarOwner(response.json())
       })
       .catch(this.handleError);
   }
 
   // API: GET /car-owners/:id
-  public getCarOwner(id: number) {
+  public getCarOwnerById(id: number): Observable<CarOwner> {
     //this.http.get()
+    return this.http
+      .get(API_URL + '/car-owners/' + id)
+      .map(response => {
+        return new CarOwner(response.json())
+      })
+      .catch(this.handleError);
   }
 
   // API: PUT /car-owners/:id
@@ -51,8 +57,12 @@ export class ApiService {
   }
 
   // API: DELETE /car-owners/:id
-  public deleteCarOwnerById(id: number) {
+  public deleteCarOwnerById(id: number): Observable<null> {
     // this.http.delete()
+    return this.http
+      .delete(API_URL + '/car-owners/' + id)
+      .map(response => null)
+      .catch(this.handleError);
   }
 
   private handleError (error: Response | any) {
