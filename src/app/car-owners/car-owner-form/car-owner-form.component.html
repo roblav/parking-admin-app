@@ -1,32 +1,49 @@
-<div class="container">
-  <h1>Car Owners Form</h1>
-    <form>
-      <div class="form-group">
-        <label for="id">ID</label>
-        <input type="text" class="form-control" id="id" required [(ngModel)]="model.id" name="id">
-      </div>
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name">
-      </div>
-      <div class="form-group">
-        <label for="carReg">Car Registration</label>
-        <input type="text" class="form-control" id="carReg" required [(ngModel)]="model.carReg" name="carReg">
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="text" class="form-control" id="email" [(ngModel)]="model.email" name="email">
-      </div>
-      <div class="form-group">
-        <label for="skypeId">Skype ID</label>
-        <input type="text" class="form-control" id="skypeId" [(ngModel)]="model.skypeId" name="skypeId">
-      </div>
-      <button type="submit" class="btn btn-default" (click)="onSubmit()">Submit</button>
-    </form>
+
+<!-- Button trigger modal -->
+<div class="text-right"> 
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formCarOwner">
+  Register a new Car Owner
+</button>
 </div>
 
-<div>
-  <h2>Model:</h2>
-  {{ currentCarOwner }}
+<!-- Modal -->
+<div class="modal fade" id="formCarOwner" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Register a new Car Owner</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" required [(ngModel)]="model.id" name="id">
+          </div>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name">
+          </div>
+          <div class="form-group">
+            <label for="carReg">Car Registration</label>
+            <input type="text" class="form-control" id="carReg" required [(ngModel)]="model.carReg" name="carReg">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" id="email" [(ngModel)]="model.email" name="email">
+          </div>
+          <div class="form-group">
+            <label for="skypeId">Skype ID</label>
+            <input type="text" class="form-control" id="skypeId" [(ngModel)]="model.skypeId" name="skypeId">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="onSubmit()">Save changes</button>
+      </div>
+    </div>
+  </div>
 </div>
-

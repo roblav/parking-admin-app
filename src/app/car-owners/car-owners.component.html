@@ -1,13 +1,46 @@
-<h2>List of Car Owners</h2>
-<car-owner-list
-(delete)="onDeleteCarOwner($event)"
-(edit)="onEditCarOwner($event)"
-[carOwners]="carOwners">
-</car-owner-list>
+<div class="container">
 
-<h2>Register a Car Owner</h2>
-<car-owner-form
-(add)="onAddCarOwner($event)"
-(update)="onUpdateCarOwner($event)"
-[updateCarOwner]="updateCarOwner">
-</car-owner-form>
+  <!--
+  <div class="row">
+
+    <div class="col">
+      <div class="card">
+        <h2 class="card-header">List of Car Owners</h2>
+        <div class="card-block">
+          <p class="card-text">View the database of all registered car owners.</p>
+          <a href="#" class="btn btn-primary">View All Car Owners</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col">
+      <div class="card">
+        <h2 class="card-header">Register a Car Owner</h2>
+        <div class="card-block">
+          <p class="card-text">Add new details for a car owner.</p>
+          <a href="#" class="btn btn-primary">Add Car Owner details</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  -->
+
+  <div class="row">
+    <div class="col">
+      <car-owner-form (add)="onAddCarOwner($event)" (update)="onUpdateCarOwner($event)" [updateCarOwner]="updateCarOwner">
+      </car-owner-form>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <h2>List of Car Owners</h2>
+      <car-owner-list (delete)="onDeleteCarOwner($event)" (edit)="onEditCarOwner($event)" [carOwners]="carOwners">
+      </car-owner-list>
+    </div>
+  </div>
+
+</div>
