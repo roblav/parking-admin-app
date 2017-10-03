@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, Input, Output, EventEmitter } from '@angular/core';
 
 import { CarOwnerDataService } from '../car-owner-data.service';
 import { CarOwner } from '../car-owner';
@@ -9,22 +9,48 @@ import { CarOwner } from '../car-owner';
   styleUrls: ['./car-owner-form.component.css'],
   providers: [CarOwnerDataService]
 })
-export class CarOwnerFormComponent implements OnInit {
+export class CarOwnerFormComponent implements OnInit, OnChanges {
 
-  model = new CarOwner();
+  model: CarOwner;
+  editCarOwner: boolean = false;
+
+  @Input() updateCarOwner: CarOwner;
+
+  @Output() add: EventEmitter<CarOwner> = new EventEmitter();
+  @Output() update: EventEmitter<CarOwner> = new EventEmitter();
 
   constructor(private carOwnerDataService: CarOwnerDataService) { }
 
+  ngOnChanges() {
+    if(this.updateCarOwner !== undefined){
+      this.model = this.updateCarOwner
+      this.editCarOwner = true
+    }
+  }
   ngOnInit() {
+    this.model = new CarOwner()
   }
 
   get currentCarOwner() { return JSON.stringify(this.model)}
 
-  addCarOwner(){
-    this.carOwnerDataService
-      .addCarOwner(this.model)
-      .subscribe()
+  
+  onSubmit() {
+    if(this.editCarOwner) {
+      this.editedCarOwner()
+    } else {
+      this.addCarOwner();
+    }
+  }
+
+  addCarOwner() {
+    this.add.emit(this.model);
     this.model = new CarOwner();
+  }
+
+  editedCarOwner() {
+    this.update.emit(this.model);
+    this.model = new CarOwner();
+    this.editCarOwner = false;
   }
 
 }

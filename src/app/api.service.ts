@@ -52,8 +52,14 @@ export class ApiService {
   }
 
   // API: PUT /car-owners/:id
-  public updateCarOwner(id: number) {
+  public updateCarOwner(carOwner: CarOwner): Observable<CarOwner> {
     //this.http.put()
+    return this.http
+      .put(API_URL + '/car-owners/' + carOwner.id, carOwner)
+      .map(response => {
+        return new CarOwner(response.json());
+      })
+      .catch(this.handleError);
   }
 
   // API: DELETE /car-owners/:id

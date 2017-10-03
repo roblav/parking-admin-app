@@ -19,6 +19,11 @@ export class CarOwnerDataService {
   // Simulate POST /carowners
   addCarOwner(carOwner: CarOwner): Observable<CarOwner> {
     return this.api.createCarOwner(carOwner);
+  } 
+  
+  // Simulate PUT /carowners
+  updateCarOwner(carOwner: CarOwner): Observable<CarOwner> {
+    return this.api.updateCarOwner(carOwner);
   }
 
   // Simulate GET /carowners/:email
