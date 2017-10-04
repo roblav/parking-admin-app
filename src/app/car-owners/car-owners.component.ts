@@ -10,10 +10,11 @@ import { CarOwner } from './car-owner';
 })
 export class CarOwnersComponent implements OnInit{
 
+  carReg: string = "";
   carOwners: CarOwner[] = []
+  carOwnersOrig: CarOwner[] = []
   updateCarOwner: CarOwner;
   constructor(private carOwnerDataService: CarOwnerDataService) { }
-
 
   ngOnInit() {
     this.updateCarOwnersArray();
@@ -65,7 +66,18 @@ export class CarOwnersComponent implements OnInit{
           this.updateCarOwnersArray();
         }
       );
+  }
 
+  onSearchCarReg() {
+    //console.log(this.carReg)
+    if(this.carReg !== ""){
+      this.carOwnersOrig = this.carOwners;
+      let carSearch = this.carOwners.filter((co) => co.carReg === this.carReg).pop();
+      this.carOwners = [carSearch]
+    }
+    else if (this.carOwnersOrig !== []){
+      this.carOwners = this.carOwnersOrig;
+    }
     
   }
 

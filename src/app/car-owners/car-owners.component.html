@@ -1,14 +1,14 @@
 <div class="container">
 
-  <!--
+
   <div class="row">
 
     <div class="col">
       <div class="card">
-        <h2 class="card-header">List of Car Owners</h2>
         <div class="card-block">
-          <p class="card-text">View the database of all registered car owners.</p>
-          <a href="#" class="btn btn-primary">View All Car Owners</a>
+          <p class="card-text">Search Car Registration:</p>
+          <input type="text" name="search-car-reg" [(ngModel)]="carReg">
+          <button type="button" class="btn btn-primary" (click)="onSearchCarReg()">Go!</button>
         </div>
       </div>
     </div>
@@ -16,17 +16,17 @@
 
     <div class="col">
       <div class="card">
-        <h2 class="card-header">Register a Car Owner</h2>
         <div class="card-block">
-          <p class="card-text">Add new details for a car owner.</p>
-          <a href="#" class="btn btn-primary">Add Car Owner details</a>
+          <p class="card-text">Add new details for a car owner</p>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formCarOwner">
+            Register a new Car Owner
+          </button>
         </div>
       </div>
     </div>
 
   </div>
-
-  -->
 
   <div class="row">
     <div class="col">
