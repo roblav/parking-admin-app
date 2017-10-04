@@ -1,5 +1,5 @@
 export class CarOwner {
-  public id: number;
+  public _id?: string;
   public name: string;
   public carReg: string;
   public email: string;
@@ -7,7 +7,6 @@ export class CarOwner {
   public createdAt?: string;
   public updateAt?: string;
   public __v?: number;
-  public _id: string;
 
   constructor(values: Object = {}){
     Object.assign(this, values)

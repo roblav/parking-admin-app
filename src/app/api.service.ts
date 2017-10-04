@@ -33,10 +33,11 @@ export class ApiService {
     //this.http.post()
     return this.http
       .post(API_URL + '/car-owners', carOwner)
-      .map(response => {
+      .map(response => null)
+      /*{
         //console.log(response.json());
         return new CarOwner(response.json())
-      })
+      })*/
       .catch(this.handleError);
   }
 

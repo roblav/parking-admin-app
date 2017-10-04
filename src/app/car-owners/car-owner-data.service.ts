@@ -17,18 +17,18 @@ export class CarOwnerDataService {
   }
 
   // Simulate POST /carowners
-  addCarOwner(carOwner: CarOwner): Observable<CarOwner> {
+  addCarOwner(carOwner: CarOwner): Observable<null> {
     return this.api.createCarOwner(carOwner);
-  } 
-  
+  }
+
+  // Simulate GET /carowners/:_id
+  getCarOwnerById(_id: string): Observable<CarOwner> {
+    return this.api.getCarOwnerById(_id);
+  }
+
   // Simulate PUT /carowners
   updateCarOwner(carOwner: CarOwner): Observable<CarOwner> {
     return this.api.updateCarOwner(carOwner);
-  }
-
-  // Simulate GET /carowners/:email
-  getCarOwnerById(_id: string): Observable<CarOwner> {
-    return this.api.getCarOwnerById(_id);
   }
 
   deleteCarOwnerById(_id: string): Observable<null> {
