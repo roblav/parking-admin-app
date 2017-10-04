@@ -41,10 +41,10 @@ export class ApiService {
   }
 
   // API: GET /car-owners/:id
-  public getCarOwnerById(id: number): Observable<CarOwner> {
+  public getCarOwnerById(_id: string): Observable<CarOwner> {
     //this.http.get()
     return this.http
-      .get(API_URL + '/car-owners/' + id)
+      .get(API_URL + '/car-owners/' + _id)
       .map(response => {
         return new CarOwner(response.json())
       })
@@ -55,7 +55,7 @@ export class ApiService {
   public updateCarOwner(carOwner: CarOwner): Observable<CarOwner> {
     //this.http.put()
     return this.http
-      .put(API_URL + '/car-owners/' + carOwner.id, carOwner)
+      .put(API_URL + '/car-owners/' + carOwner._id, carOwner)
       .map(response => {
         return new CarOwner(response.json());
       })
@@ -63,10 +63,10 @@ export class ApiService {
   }
 
   // API: DELETE /car-owners/:id
-  public deleteCarOwnerById(id: number): Observable<null> {
+  public deleteCarOwnerById(_id: string): Observable<null> {
     // this.http.delete()
     return this.http
-      .delete(API_URL + '/car-owners/' + id)
+      .delete(API_URL + '/car-owners/' + _id)
       .map(response => null)
       .catch(this.handleError);
   }

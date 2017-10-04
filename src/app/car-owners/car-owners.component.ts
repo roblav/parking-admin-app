@@ -29,19 +29,19 @@ export class CarOwnersComponent implements OnInit{
     )
   }
 
-  onDeleteCarOwner(id: number) {
-    console.log('DELETE: ' + id)
+  onDeleteCarOwner(_id: string) {
+    console.log('DELETE: ' + _id)
     this.carOwnerDataService
-    .deleteCarOwnerById(id)
+    .deleteCarOwnerById(_id)
     .subscribe(
       (_) => {
-        this.carOwners = this.carOwners.filter((co) => co.id !== id)
+        this.carOwners = this.carOwners.filter((co) => co._id !== _id)
       }
     )
   }
 
-  onEditCarOwner(id: number) {
-    let carOwner = this.carOwners.filter((co) => co.id === id).pop();
+  onEditCarOwner(_id: string) {
+    let carOwner = this.carOwners.filter((co) => co._id === _id).pop();
     this.updateCarOwner = Object.assign({}, carOwner);
 
     this.updateCarOwnersArray();

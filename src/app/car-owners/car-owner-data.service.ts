@@ -27,12 +27,12 @@ export class CarOwnerDataService {
   }
 
   // Simulate GET /carowners/:email
-  getCarOwnerById(id: number): Observable<CarOwner> {
-    return this.api.getCarOwnerById(id);
+  getCarOwnerById(_id: string): Observable<CarOwner> {
+    return this.api.getCarOwnerById(_id);
   }
 
-  deleteCarOwnerById(id: number): Observable<null> {
-    return this.api.deleteCarOwnerById(id);
+  deleteCarOwnerById(_id: string): Observable<null> {
+    return this.api.deleteCarOwnerById(_id);
   }
 
 }
