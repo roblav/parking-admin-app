@@ -81,5 +81,11 @@ export class CarOwnersComponent implements OnInit{
     
   }
 
+  onClearSearchCarReg(){
+    this.carOwners = this.carOwnersOrig;
+    //Clear input
+    this.carReg = "";
+  }
+
 
 }
