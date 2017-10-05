@@ -1,4 +1,6 @@
-<table class="table">
+<div id="no-more-tables"> 
+<table class="table col-md-12 table-bordered table-striped">
+  <thead>
   <tr>
     <th>Name</th>
     <th>Car Reg</th>
@@ -7,12 +9,16 @@
     <th>Edit</th>
     <th>Delete</th>
   </tr>
+  </thead>
+  <tbody>
   <tr *ngFor="let carOwner of carOwners">
-    <td>{{carOwner.name}}</td>
-    <td>{{carOwner.carReg}}</td>
-    <td>{{carOwner.email}}</td>
-    <td>{{carOwner.skypeId}}</td>
-    <td><button type="button" (click)="editCarOwner(carOwner._id)" data-toggle="modal" data-target="#formCarOwner">Edit</button></td>
-    <td><button type="button" (click)="deleteCarOwner(carOwner._id)">Delete</button></td>
+    <td data-title="Name">{{carOwner.name}}</td>
+    <td data-title="Car Reg">{{carOwner.carReg}}</td>
+    <td data-title="Email">{{carOwner.email}}</td>
+    <td data-title="Skype Id">{{carOwner.skypeId}}</td>
+    <td><button type="button" class="btn btn-primary" (click)="editCarOwner(carOwner._id)" data-toggle="modal" data-target="#formCarOwner">Edit</button></td>
+    <td><button type="button" class="btn btn-warning" (click)="deleteCarOwner(carOwner._id)">Delete</button></td>
   </tr>
+  </tbody>
 </table>
+</div>
