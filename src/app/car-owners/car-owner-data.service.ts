@@ -35,4 +35,8 @@ export class CarOwnerDataService {
     return this.api.deleteCarOwnerById(_id);
   }
 
+  skypeAlert(name: string): Observable<null> {
+    return this.api.skypeAlert(name)
+  }
+
 }

@@ -39,7 +39,11 @@
   <div class="row">
     <div class="col">
       <h2>List of Car Owners</h2>
-      <car-owner-list (delete)="onDeleteCarOwner($event)" (edit)="onEditCarOwner($event)" [carOwners]="carOwners">
+      <car-owner-list 
+        (delete)="onDeleteCarOwner($event)"
+        (edit)="onEditCarOwner($event)" 
+        (skypeAlert)="onSkypeAlertCarOwner($event)" 
+        [carOwners]="carOwners">
       </car-owner-list>
     </div>
   </div>

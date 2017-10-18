@@ -48,6 +48,16 @@ export class CarOwnersComponent implements OnInit{
     this.updateCarOwnersArray();
   }
 
+  onSkypeAlertCarOwner(name: string) {
+    this.carOwnerDataService
+    .skypeAlert(name)
+    .subscribe(
+      (_) => {
+        null
+      }
+    )
+  }
+
   onAddCarOwner(carOwner: CarOwner){
     this.carOwnerDataService
       .addCarOwner(carOwner)

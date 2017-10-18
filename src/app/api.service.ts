@@ -72,6 +72,19 @@ export class ApiService {
       .catch(this.handleError);
   }
 
+  // API: DELETE /car-owners/:id
+  public skypeAlert(userName: string): Observable<null> {
+    // this.http.delete()
+    let skypeDetails = {
+      "name" : userName
+    }
+    return this.http
+      .post(API_URL + '/car-owners/skype-display-name', skypeDetails)
+      .map(response => null)
+      .catch(this.handleError);
+  }
+  
+
   private handleError (error: Response | any) {
     console.error('ApiService::handleError', error);
     return Observable.throw(error);

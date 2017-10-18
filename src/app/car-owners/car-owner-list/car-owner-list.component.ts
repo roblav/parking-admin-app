@@ -15,6 +15,7 @@ export class CarOwnerListComponent implements OnInit{
 
   @Output() delete: EventEmitter<CarOwner> = new EventEmitter()
   @Output() edit: EventEmitter<CarOwner> = new EventEmitter()
+  @Output() skypeAlert: EventEmitter<CarOwner> = new EventEmitter()
 
   constructor(private carOwnerDataService: CarOwnerDataService) { }
 
@@ -25,6 +26,11 @@ export class CarOwnerListComponent implements OnInit{
     this.edit.emit(id)
   }
 
-  deleteCarOwner(id){ this.delete.emit(id) }
+  deleteCarOwner(id){
+    this.delete.emit(id)
+  }
 
+  skypeCarOwner(name){ 
+    this.skypeAlert.emit(name)
+  }
 }
